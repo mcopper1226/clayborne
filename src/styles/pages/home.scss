@@ -1,0 +1,505 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid $midgray;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  .header-outer {
+    margin: 0;
+    margin-left: 2vw;
+    display: flex;
+    align-items: center;
+  }
+  .logo-wrap {
+    width: 225px;
+    height: 55px;
+
+  }
+  .nav-wrap {
+    flex: 1;
+  }
+}
+svg {
+  width: 100%;
+  max-height: 100%;
+}
+/* All */
+.nav {
+  //margin-bottom: 48px;
+  font-family: $monserrat;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: .15rem;
+  .top-level {
+    display: flex;
+    justify-content: flex-end;
+  }
+  ul {
+    *zoom: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    &:before, &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    > li {
+
+      position: relative;
+
+    }
+  }
+  a {
+    display: block;
+    padding: 0px 30px;
+    height: 80px;
+    line-height: 80px;
+    color: $navy;
+    border-left: 1px solid $midgray;
+    &:hover {
+      color: $dodger;
+
+    }
+  }
+  li {
+    ul {
+      background: white;
+      li {
+        width: 240px;
+        a {
+          border: none;
+          &:hover {
+            background: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.sub-menu a {
+  height: 60px;
+  line-height: 60px;
+}
+
+.nav3 ul > li:hover ul li {
+  height: 60px;
+  line-height: 60px;
+}
+.nav3 li ul {
+  position: absolute;
+  left: 0;
+  top: 81px;
+  z-index: -1;
+}
+.nav3 li ul li {
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: height 200ms ease-in;
+  -moz-transition: height 200ms ease-in;
+  -o-transition: height 200ms ease-in;
+  transition: height 200ms ease-in;
+}
+
+.ratings-reel {
+  background: $midgray;
+  .inner-container {
+      @include grid-row(ltr, stretch, space-between, 20px, wrap)
+      & > * {
+        flex: 1;
+        padding: 0 10px;
+      }
+  }
+  .rating {
+    text-align: center;
+    border-left: 1px solid lighten($color-font, 15%);
+    color: $color-font;
+    text-decoration: none;
+    &:last-of-type {
+      border-right: 1px solid lighten($color-font, 15%);
+    }
+    .stars {
+      width: 120px;
+      margin: 0 auto;
+    }
+    p {
+      font-style: italic;
+      margin: 0;
+      margin-top: 5px;
+    }
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  color: $navy;
+  margin: 1rem 0;
+}
+
+.intro {
+  text-align: center;
+}
+
+.three-col {
+  margin: 4rem 0;
+  @include grid-row(ltr, stretch, space-between, 40px, wrap)
+  & > * {
+    flex: 1;
+    margin: 0 20px;
+  }
+}
+
+.two-col {
+  @include grid-row(ltr, stretch, space-between, 0px, wrap)
+  & > * {
+    flex: 1;
+    margin: 0;
+  }
+}
+
+.block {
+  background: $navy;
+  position: relative;
+  background-image: url('http://localhost:3000/app/uploads/2018/05/grid-1.jpg');
+  background-size: cover;
+  background-position: center;
+  &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+      left: 0;
+        bottom: 0;
+
+        background:
+        linear-gradient(
+          rgba($dodger, .6),
+          rgba($dodger2, .6)
+        );
+
+      }
+  .block-inner {
+    @include fit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    & > * {
+      color: white;
+    }
+  }
+}
+.test-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span.circle {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 100%;
+    margin: 0 5px;
+    margin-top: -8px;
+
+  }
+}
+.test-link {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 40px;
+  height: 40px;
+  display: inline-block;
+  transition: color .2s ease-in-out;
+  &:hover {
+    color: $navy;
+  }
+}
+h3.cta-text {
+  font-family: $monserrat;
+  color: $navy;
+  letter-spacing: .3rem;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-top: 4rem;
+  a {
+    text-decoration: underline;
+    color: $teal;
+  }
+}
+.results {
+  background: lighten($midgray, 5%);
+}
+.small {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.result-value {
+  text-align: center;
+  img {
+    height: 180px;
+    margin: 0 auto;
+  }
+}
+.two-col-text {
+  column-count: 2;
+}
+
+h4.lined {
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  background: $navy;
+  color: $dodger;
+  text-align: center;
+  position: relative;
+  &:before {
+    content: '';
+    width: 36%;
+    height: 1px;
+    background: $dodger;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+  }
+  &:after {
+    content: '';
+    width: 36%;
+    height: 1px;
+    background: $dodger;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -1px;
+  }
+
+}
+
+.process {
+
+
+  .content-inner {
+    height: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .step {
+      padding: 2rem 0;
+      max-width: 400px;
+      text-align: center;
+      p {
+        margin: 0;
+      }
+    }
+
+  }
+  h5 {
+    margin: 0;
+    text-align: center;
+    color: $dodger;
+    font-size: 2rem;
+  }
+}
+.image-wrap {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.testimonials {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content-inner {
+      margin: 0 20%;
+      text-align: center;
+    }
+  }
+  .attribution {
+    font-family: $monserrat;
+    color: $teal;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    .context {
+      display: block;
+      text-transform: none;
+      letter-spacing: 0;
+      font-style: italic;
+
+    }
+  }
+}
+
+.contact-intro {
+  background: $navy;
+  color: white;
+  h2 {
+    color: white;
+  }
+}
+
+.content.contact-info {
+  flex: 2;
+  p {
+    margin: 0;
+  }
+  .location-info {
+    margin-top: 4rem;
+    h4 {
+      font-size: 1.4rem;
+      color: $teal;
+      text-decoration: underline;
+    }
+    a {
+      font-family: $crimson;
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1.7;
+    }
+  }
+}
+.content.form-module {
+  padding-left: 4rem;
+  min-width: 500px;
+}
+
+.form-module input {
+  outline: none;
+  display: block;
+  width: 100%;
+  border: 1px solid $midgray;
+  margin: 0 0 20px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  font-wieght: 400;
+  transition: 0.3s ease;
+}
+.form-module input:focus {
+  border: 1px solid $teal;
+  color: #333333;
+}
+.form-module button {
+  cursor: pointer;
+  background: $teal;
+  width: 100%;
+  border: 0;
+  padding: 10px 15px;
+  color: #ffffff;
+  transition: 0.3s ease;
+  font-family: $pathway;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+.form-module button:hover {
+  background: darken($teal, 5%);
+}
+
+.bottom-cta {
+  background: $midgray;
+  text-align: center;
+}
+
+footer {
+  background: $navy;
+  h3, p, a {
+    color: white;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .inner-container {
+    display: flex;
+  }
+  .email-signup {
+    flex: 0 0 350px;
+  }
+  .three-col {
+    margin: 0;
+    flex: 1;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li a {
+      text-align: center;
+      color: white;
+      font-family: $monserrat;
+      text-transform: uppercase;
+      letter-spacing: .15rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.social-links {
+  text-align: center;
+  display: inline-block;
+  margin-top: 2rem;
+  li {
+    width: 26px;
+    height: 26px;
+    display: block;
+    float: left;
+    margin: 0 5px;
+    padding: 5px;
+    background: $teal;
+    border-radius: 100%;
+    transition: background-color .25s ease-in-out;
+    &:hover {
+      background-color: white;
+    }
+    .cls-1 {
+      fill: $navy;
+    }
+  }
+}
+
+.form-inner {
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+  .email-input {
+    display: block;
+    flex: 1;
+    position: static;
+    width: 100%;
+    border-right: 0;
+    padding: 13.5px 10px 13.5px 15px;
+    height: 54px;
+    line-height: 27px;
+    font-size: 1.4rem;
+    border: 1px solid $midgray;
+  }
+  .submit {
+    flex: 0 1 auto;
+    z-index: 2;
+    width: auto;
+    padding: 0 30px;
+    background: $teal;
+    color: white;
+    border: 1px solid $teal;
+    font-family: $pathway;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    transform: background .2s ease-in-out;
+    &:hover {
+      background: darken($teal, 5%);
+    }
+  }
+}

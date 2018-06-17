@@ -1,0 +1,133 @@
+.aspect {
+  width: 100%;
+  z-index: -10;
+  position: relative;
+  opacity: 0;
+}
+
+.hero {
+  background-color: gray;
+  position: relative;
+  .full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .hero-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    margin-left: 10%;
+    padding: 4vw;
+    max-width: 55rem;
+    background: rgba(white, .9);
+    z-index: 10;
+    h1 {
+      font-family: $monserrat;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      letter-spacing: .2rem;
+      margin: 0;
+      line-height: 1;
+    }
+    h2 {
+      font-family: $crimson;
+      font-weight: 700;
+      color: $navy;
+      font-size: 3.6rem;
+      margin: 1.5rem 0;
+      line-height: 1.2;
+    }
+  }
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+	border: 0;
+	outline: none;
+	display: block;
+}
+
+.aspect {
+  width: 100%;
+  z-index: -10;
+  position: relative;
+  opacity: 0;
+}
+
+
+/* progressive image CSS */
+a.progressive {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none;
+}
+
+a.progressive:not(.replace) {
+  cursor: default;
+}
+
+a.progressive img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  border: 0 none;
+}
+
+a.progressive img.preview {
+  filter: blur(2vw);
+  transform: scale(1.05);
+}
+
+a.progressive img.reveal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform, opacity;
+  animation: reveal .5s ease-out;
+}
+
+@keyframes reveal {
+	0% { transform: scale(1.05); opacity: 0; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+.placeholder {
+  background-color: #f6f6f6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder img {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 1s linear;
+}
+
+.placeholder img.loaded {
+  opacity: 1;
+}
+
+.img-small {
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  transform: scale(1);
+}
